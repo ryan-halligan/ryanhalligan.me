@@ -121,6 +121,9 @@
             padding: 4rem 2rem;
             background: linear-gradient(135deg, var(--navy) 0%, #004a94 100%);
             color: white;
+            border-radius: 0;
+            box-shadow: none;
+            margin: 0;
         }
         
         .hero h1 {
@@ -282,6 +285,11 @@
             font-size: 1rem;
         }
         
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
         .contact-form button {
             width: 100%;
             background-color: var(--gold);
@@ -337,8 +345,12 @@
             }
             nav ul {
                 gap: 1rem;
+                font-size: 0.9rem;
             }
             .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .design-grid {
                 grid-template-columns: 1fr;
             }
             .profile-image {
@@ -352,7 +364,7 @@
     <header>
         <nav>
             <div class="logo-container">
-                <img src="IMG_5380.png" alt="RH Logo" class="w-10 h-10">
+                <img src="IMG_5380.png" alt="RH Logo">
             </div>
             <ul>
                 <li><a href="#about">About</a></li>
@@ -377,7 +389,7 @@
                 <a href="https://www.linkedin.com/in/ryan-halligan/" target="_blank" title="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://instagram.com" target="_blank" title="Instagram">
+                <a href="https://instagram.com/your-profile" target="_blank" title="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
@@ -418,4 +430,3 @@
             <div class="experience-item">
                 <h3><span class="job-title">Atlanta Hawks Marketing Team Lead, Case Competitor</span> at <span class="company">Georgia Tech Sports Business Club</span></h3>
                 <div class="date">November 2024 - Present | Atlanta, GA</div>
-                <p>• Leading team in a data-driven analysis to design
