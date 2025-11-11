@@ -5,7 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ryan Halligan - Georgia Tech Business Administration Student specializing in Information Technology Management">
     <title>Ryan Halligan | Portfolio</title>
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --main-color: #003057;
+            --secondary-color: #A28D5B;
+            --accent-color: #A28D5B;
+            --text-color: #333;
+            --light-bg: #f0f4f8;
+            --white: #ffffff;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -15,14 +26,14 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #003366 0%, #004a94 100%);
+            color: var(--text-color);
+            background: linear-gradient(135deg, var(--main-color) 0%, var(--secondary-color) 100%);
             min-height: 100vh;
         }
 
         header {
             background: rgba(255, 255, 255, 0.95);
-            padding: 1rem 0;
+            padding: 0.75rem 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -40,9 +51,17 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #003366;
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+            /* Apply color overlay to match #A28D5B */
+            filter: hue-rotate(25deg) saturate(0.7) brightness(0.85);
+            /* Adjust these values if needed to match your logo */
         }
 
         nav ul {
@@ -53,13 +72,13 @@
 
         nav a {
             text-decoration: none;
-            color: #333;
+            color: var(--text-color);
             font-weight: 500;
             transition: color 0.3s;
         }
 
         nav a:hover {
-            color: #003366;
+            color: var(--main-color);
         }
 
         main {
@@ -69,7 +88,7 @@
         }
 
         section {
-            background: white;
+            background: var(--white);
             margin: 2rem 0;
             padding: 3rem 2rem;
             border-radius: 12px;
@@ -78,33 +97,33 @@
 
         h1 {
             font-size: 3rem;
-            color: #003366;
+            color: var(--main-color);
             margin-bottom: 0.5rem;
         }
 
         h2 {
             font-size: 2rem;
-            color: #003366;
+            color: var(--main-color);
             margin-bottom: 1.5rem;
-            border-bottom: 3px solid #003366;
+            border-bottom: 3px solid var(--accent-color);
             padding-bottom: 0.5rem;
         }
 
         h3 {
             font-size: 1.3rem;
-            color: #333;
+            color: var(--text-color);
             margin-bottom: 0.5rem;
         }
 
         .hero {
             text-align: center;
             padding: 4rem 2rem;
-            background: linear-gradient(135deg, #003366 0%, #004a94 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--main-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
         }
 
         .hero h1 {
-            color: white;
+            color: var(--white);
             margin-bottom: 1rem;
         }
 
@@ -118,7 +137,7 @@
             height: 200px;
             border-radius: 50%;
             margin: 0 auto 2rem;
-            border: 5px solid white;
+            border: 5px solid var(--white);
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             object-fit: cover;
             display: block;
@@ -127,8 +146,8 @@
         .cta-button {
             display: inline-block;
             padding: 1rem 2rem;
-            background: white;
-            color: #003366;
+            background: var(--white);
+            color: var(--main-color);
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
@@ -151,13 +170,13 @@
         }
 
         .job-title {
-            color: #003366;
+            color: var(--main-color);
             font-weight: bold;
         }
 
         .company {
             font-weight: 600;
-            color: #333;
+            color: var(--text-color);
         }
 
         .date {
@@ -174,14 +193,14 @@
         }
 
         .skill-category {
-            background: #f0f4f8;
+            background: var(--light-bg);
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 4px solid #003366;
+            border-left: 4px solid var(--accent-color);
         }
 
         .skill-category h3 {
-            color: #003366;
+            color: var(--main-color);
             margin-bottom: 1rem;
             font-size: 1.1rem;
         }
@@ -195,11 +214,95 @@
             color: #666;
         }
 
-        .contact-info {
+        /* New Designs Section */
+        .designs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            align-items: center;
+        }
+
+        .design-item {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .design-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .design-item img {
+            max-width: 100%;
+            height: 80px;
+            object-fit: contain;
+            filter: grayscale(0.2);
+        }
+
+        .design-item p {
+            margin-top: 1rem;
+            font-weight: 500;
+            color: var(--main-color);
+        }
+
+        /* New Contact Form */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-form {
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            margin-top: 1.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.75rem;
+            border: 2px solid var(--light-bg);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            padding: 1rem 2rem;
+            background: var(--main-color);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: var(--secondary-color);
+        }
+
+        .contact-info-side {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
         .contact-item {
@@ -209,7 +312,7 @@
         }
 
         .contact-item a {
-            color: #003366;
+            color: var(--main-color);
             text-decoration: none;
             font-weight: 500;
         }
@@ -218,10 +321,40 @@
             text-decoration: underline;
         }
 
+        /* Social Media Icons */
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--main-color);
+            color: var(--white);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
-            color: white;
+            color: var(--white);
+        }
+
+        footer .social-icons {
+            margin-top: 1rem;
         }
 
         @media (max-width: 768px) {
@@ -231,6 +364,7 @@
 
             nav ul {
                 gap: 1rem;
+                font-size: 0.9rem;
             }
 
             .skills-grid {
@@ -241,18 +375,31 @@
                 width: 150px;
                 height: 150px;
             }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .designs-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">RH</div>
+            <div class="logo">
+                <!-- Replace "logo.png" with your actual logo file path -->
+                <img src="logo.png" alt="Ryan Halligan Logo">
+            </div>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#designs">Designs</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -399,21 +546,81 @@
             </div>
         </section>
 
+        <!-- New Designs Section -->
+        <section id="designs">
+            <h2>Design Work & Collaborations</h2>
+            <p>Logos and organizations I've worked with:</p>
+            <div class="designs-grid">
+                <div class="design-item">
+                    <!-- Replace with actual Georgia Tech logo -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Georgia_Tech_Yellow_Jackets_logo.svg/1200px-Georgia_Tech_Yellow_Jackets_logo.svg.png" alt="Georgia Tech">
+                    <p>Georgia Tech</p>
+                </div>
+                <div class="design-item">
+                    <!-- Replace with actual Reel Analytics logo -->
+                    <img src="https://via.placeholder.com/150x80/A28D5B/FFFFFF?text=Reel+Analytics" alt="Reel Analytics">
+                    <p>Reel Analytics</p>
+                </div>
+                <div class="design-item">
+                    <!-- Replace with actual Hawks logo -->
+                    <img src="https://via.placeholder.com/150x80/A28D5B/FFFFFF?text=Atlanta+Hawks" alt="Atlanta Hawks">
+                    <p>Atlanta Hawks</p>
+                </div>
+                <div class="design-item">
+                    <!-- Replace with actual Sigma Nu logo -->
+                    <img src="https://via.placeholder.com/150x80/A28D5B/FFFFFF?text=Sigma+Nu" alt="Sigma Nu">
+                    <p>Sigma Nu Fraternity</p>
+                </div>
+                <div class="design-item">
+                    <!-- Replace with actual YMSL logo -->
+                    <img src="https://via.placeholder.com/150x80/A28D5B/FFFFFF?text=YMSL" alt="YMSL">
+                    <p>Young Men's Service League</p>
+                </div>
+                <div class="design-item">
+                    <!-- Add more logos as needed -->
+                    <img src="https://via.placeholder.com/150x80/A28D5B/FFFFFF?text=Your+Logo" alt="Your Design">
+                    <p>Your Project</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Updated Contact Section with Form -->
         <section id="contact">
             <h2>Get in Touch</h2>
             <p>I'm always open to discussing new opportunities, collaborations, or just connecting with fellow professionals and students.</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <strong>Location:</strong> Atlanta, Georgia
-                </div>
-                <div class="contact-item">
-                    <strong>Email:</strong> rhalligan@gmail.com
-                </div>
-                <div class="contact-item">
-                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ryan-halligan" target="_blank">Connect with me on LinkedIn</a>
-                </div>
-                <div class="contact-item">
-                    <strong>University:</strong> Georgia Institute of Technology
+            
+            <div class="contact-container">
+                <form class="contact-form" action="mailto:rhalligan@gmail.com" method="post" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject">
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+
+                <div class="contact-info-side">
+                    <div class="contact-item">
+                        <strong>Location:</strong> Atlanta, Georgia
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong> <a href="mailto:rhalligan@gmail.com">rhalligan@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>University:</strong> Georgia Institute of Technology
+                    </div>
+                    <div class="contact-item">
+                        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ryan-halligan" target="_blank">linkedin.com/in/ryan-halligan</a>
+                    </div>
+                    
+                    <!-- Social Media Icons -->
+                    <div class="social-icons" style="margin-top: 1.5rem; justify-content: flex-start;">
+                        <a href="https://www.linkedin.com/in/ryan-halligan" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -421,6 +628,14 @@
 
     <footer>
         <p>&copy; 2025 Ryan Halligan. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/ryan-halligan" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
     </footer>
 </body>
 </html>
