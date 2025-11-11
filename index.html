@@ -5,28 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ryan Halligan - Georgia Tech Business Administration Student specializing in Information Technology Management">
     <title>Ryan Halligan | Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --navy: #003057;
-            --gold: #A28D5B;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, var(--navy) 0%, #004a94 100%);
+            background: linear-gradient(135deg, #003366 0%, #004a94 100%);
             min-height: 100vh;
         }
-        
+
         header {
             background: rgba(255, 255, 255, 0.95);
             padding: 1rem 0;
@@ -36,7 +29,7 @@
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
+
         nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -45,49 +38,36 @@
             justify-content: space-between;
             align-items: center;
         }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            filter: hue-rotate(30deg) saturate(0.8);
-        }
-        
-        .logo-container img {
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 50%;
-        }
-        
+
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: var(--navy);
+            color: #003366;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
-        
+
         nav a {
             text-decoration: none;
             color: #333;
             font-weight: 500;
             transition: color 0.3s;
         }
-        
+
         nav a:hover {
-            color: var(--navy);
+            color: #003366;
         }
-        
+
         main {
             max-width: 1200px;
             margin: 0 auto;
             padding: 6rem 2rem 2rem;
         }
-        
+
         section {
             background: white;
             margin: 2rem 0;
@@ -95,47 +75,44 @@
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        
+
         h1 {
             font-size: 3rem;
-            color: var(--navy);
+            color: #003366;
             margin-bottom: 0.5rem;
         }
-        
+
         h2 {
             font-size: 2rem;
-            color: var(--navy);
+            color: #003366;
             margin-bottom: 1.5rem;
-            border-bottom: 3px solid var(--gold);
+            border-bottom: 3px solid #003366;
             padding-bottom: 0.5rem;
         }
-        
+
         h3 {
             font-size: 1.3rem;
             color: #333;
             margin-bottom: 0.5rem;
         }
-        
+
         .hero {
             text-align: center;
             padding: 4rem 2rem;
-            background: linear-gradient(135deg, var(--navy) 0%, #004a94 100%);
+            background: linear-gradient(135deg, #003366 0%, #004a94 100%);
             color: white;
-            border-radius: 0;
-            box-shadow: none;
-            margin: 0;
         }
-        
+
         .hero h1 {
             color: white;
             margin-bottom: 1rem;
         }
-        
+
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
         }
-        
+
         .profile-image {
             width: 200px;
             height: 200px;
@@ -146,213 +123,120 @@
             object-fit: cover;
             display: block;
         }
-        
+
         .cta-button {
             display: inline-block;
             padding: 1rem 2rem;
             background: white;
-            color: var(--navy);
+            color: #003366;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-        
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .social-icons a {
-            color: white;
-            font-size: 2rem;
-            transition: color 0.3s;
-        }
-        
-        .social-icons a:hover {
-            color: var(--gold);
-        }
-        
+
         .experience-item, .education-item {
             margin-bottom: 2rem;
             padding-bottom: 2rem;
             border-bottom: 1px solid #eee;
         }
-        
+
         .experience-item:last-child, .education-item:last-child {
             border-bottom: none;
         }
-        
+
         .job-title {
-            color: var(--navy);
+            color: #003366;
             font-weight: bold;
         }
-        
+
         .company {
             font-weight: 600;
             color: #333;
         }
-        
+
         .date {
             color: #666;
             font-size: 0.9rem;
             margin-bottom: 0.5rem;
         }
-        
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
             margin-top: 1.5rem;
         }
-        
+
         .skill-category {
             background: #f0f4f8;
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 4px solid var(--navy);
+            border-left: 4px solid #003366;
         }
-        
+
         .skill-category h3 {
-            color: var(--navy);
+            color: #003366;
             margin-bottom: 1rem;
             font-size: 1.1rem;
         }
-        
+
         .skill-category ul {
             list-style: none;
         }
-        
+
         .skill-category li {
             padding: 0.3rem 0;
             color: #666;
         }
-        
-        .design-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .design-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-            border: 2px solid var(--gold);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .design-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(162, 141, 91, 0.2);
-        }
-        
-        .design-card i {
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-        
-        .design-card h3 {
-            color: var(--navy);
-            margin-bottom: 0.5rem;
-        }
-        
-        .contact-form {
-            max-width: 600px;
-            margin: 2rem auto;
-        }
-        
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            background-color: rgba(0, 48, 87, 0.05);
-            border: 1px solid rgba(162, 141, 91, 0.3);
-            color: #333;
-            padding: 12px;
-            margin-bottom: 16px;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-        
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .contact-form button {
-            width: 100%;
-            background-color: var(--gold);
-            color: var(--navy);
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .contact-form button:hover {
-            background-color: #8f7e47;
-        }
-        
+
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 1rem;
             margin-top: 1.5rem;
         }
-        
+
         .contact-item {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
-        
+
         .contact-item a {
-            color: var(--navy);
+            color: #003366;
             text-decoration: none;
             font-weight: 500;
         }
-        
+
         .contact-item a:hover {
             text-decoration: underline;
         }
-        
+
         footer {
             text-align: center;
             padding: 2rem;
             color: white;
         }
-        
-        .gold-accent {
-            color: var(--gold);
-        }
-        
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
             }
+
             nav ul {
                 gap: 1rem;
-                font-size: 0.9rem;
             }
+
             .skills-grid {
                 grid-template-columns: 1fr;
             }
-            .design-grid {
-                grid-template-columns: 1fr;
-            }
+
             .profile-image {
                 width: 150px;
                 height: 150px;
@@ -363,50 +247,39 @@
 <body>
     <header>
         <nav>
-            <div class="logo-container">
-                <img src="IMG_5380.png" alt="RH Logo">
-            </div>
+            <div class="logo">RH</div>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#design">Design</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    
-    <section class="hero">
-        <img src="https://raw.githubusercontent.com/ryan-halligan/ryanhalligan.me/main/IMG_0002.JPG" alt="Ryan Halligan" class="profile-image" />
-        <div class="hero-content">
-            <h1>Ryan Halligan</h1>
-            <p>Business Administration Student | Information Technology Management</p>
-            <p>Minor in Business of Sport and Entertainment</p>
-            <p>Georgia Institute of Technology | Class of 2028</p>
-            <a href="#contact" class="cta-button">Get in Touch</a>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/ryan-halligan/" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://instagram.com/your-profile" target="_blank" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
+
+        <section class="hero">
+            <img src="https://raw.githubusercontent.com/ryan-halligan/ryanhalligan.me/main/IMG_0002.JPG" alt="Ryan Halligan" class="profile-image" />
+            <div class="hero-content">
+                <h1>Ryan Halligan</h1>
+                <p>Business Administration Student | Information Technology Management</p>
+                <p>Minor in Business of Sport and Entertainment</p>
+                <p>Georgia Institute of Technology | Class of 2028</p>
+                <a href="#contact" class="cta-button">Get in Touch</a>
             </div>
-        </div>
-    </section>
-    
+        </section>
+
     <main>
         <section id="about">
             <h2>About Me</h2>
             <p>I'm a Business Administration student at the Georgia Institute of Technology's Scheller College of Business, concentrating in Information Technology Management. I'm competitive and hard-working, with a passion for sports and efficiency.</p>
             <p>Currently, I'm gaining hands-on experience as a Player Personnel Intern at Reel Analytics and as a Student Equipment Manager for Georgia Tech Football, where I combine my love for sports with data analysis and operational excellence.</p>
         </section>
-        
+
         <section id="experience">
             <h2>Experience</h2>
             
-            <div class="experience-item">
+           <div class="experience-item">
                 <h3><span class="job-title">Student Equipment Manager</span> at <span class="company">Georgia Tech Football</span></h3>
                 <div class="date">July 2024 - Present | Atlanta, GA</div>
                 <p>• Manage daily equipment operations for 200+ players and staff, ensuring gear is readily available for every practice and game</p>
@@ -418,15 +291,136 @@
                 <h3><span class="job-title">Player Personnel Intern</span> at <span class="company">Reel Analytics</span></h3>
                 <div class="date">January 2025 - Present | Atlanta, GA</div>
                 <p>• Evaluated 250+ NFL Draft prospects by analyzing HUDL film, position specific metrics, PFF Grades, and personal information to create 200+ player profiles with NFL comparisons, predictive analytics, and data visualization for an NFL Draft Guide</p>
-                <p>• Support the University of Colorado's game planning by producing weekly, data-driven advanced scouting reports on future opponents, using Reel Analytics' IGA® score and PFF data to identify insightful player tendencies, strengths, and weaknesses</p>
+                <p>• Support the University of Colorado’s game planning by producing weekly, data-driven advanced scouting reports on future opponents, using Reel Analytics’ IGA® score and PFF data to identify insightful player tendencies, strengths, and weaknesses</p>
             </div>
-            
+
+
             <div class="experience-item">
                 <h3><span class="job-title">Pool Manager</span> at <span class="company">SwimAtlanta Pool Management</span></h3>
                 <div class="date">May 2023 - August 2024 | Dunwoody, GA</div>
                 <p>• Managed daily pool operations at The Branches Club and Mark Trail Club, including staff training, scheduling, and site supervision for 15+ employees</p>
             </div>
-            
+
             <div class="experience-item">
                 <h3><span class="job-title">Atlanta Hawks Marketing Team Lead, Case Competitor</span> at <span class="company">Georgia Tech Sports Business Club</span></h3>
                 <div class="date">November 2024 - Present | Atlanta, GA</div>
+                <p>• Leading team in a data-driven analysis to design and present social media and ticketing strategies to Hawks executives, solidifying interdisciplinary-team leadership and collaboration, while contributing to an increase in revenue, YouTube views, and fan interaction</p>
+                <p>• Developed a strategic business proposal with the Sports Business Club using market research and data-driven insights to enhance visibility and revenue for Georgia Tech Men’s Basketball, earning 3rd place from a panel of judges out of 40+ teams</p>
+            </div>
+
+            <div class="experience-item">
+                <h3><span class="job-title">Rush Chairman, Athletics Chairman</span> at <span class="company">Sigma Nu Gamma Alpha</span></h3>
+                <div class="date">July 2024 - Present | Atlanta, GA</div>
+                <p>• Elected to lead all fraternity recruitment operations as Rush Chair, after contributing to 40+ quality new members as an assistant </p>
+                <p>• As Athletics Chair, managed 15+ intramural teams and fraternity sporting events, driving competitiveness and brother engagement</p>
+            </div>
+
+            <div class="experience-item">
+                <h3><span class="job-title">Altar Server Emeritus</span> at <span class="company">Saint Jude the Apostle Catholic Church Altar Server Guild</span></h3>
+                <div class="date">July 2024 - Present | Atlanta, GA</div>
+                <p>• Assist priests and deacons by leading a team of 5-8 servers on the altar during mass, contributing 300+ volunteer hours</p>
+            </div> 
+            <div class="experience-item">
+                <h3><span class="job-title">Vice President Class of 2024, Philanthropy Chair</span> at <span class="company">Young Men's Service League</span></h3>
+                <div class="date">2021 - 2024 | Dunwoody, GA</div>
+                <p>• Led and supported 25 members in 140+ hours of service initiatives, meetings, and leadership development</p>
+                <p>• Awards: Heart of YMSL, Senior Leadership, Most Philanthropies Served, Superior Service, and Spirit of Service</p>
+            </div>
+
+            <div class="experience-item">
+                <h3><span class="job-title">Basketball Coach</span> at <span class="company">All Saints Catholic Church</span></h3>
+                <div class="date">2016 - Present | Atlanta, GA</div>
+                <p>• Led and instructed U12 and U14 players, implemented sporting strategies, built team bonds and developed player skills</p>
+            </div>
+            
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <h3>Georgia Tech Scheller College of Business</h3>
+                <div class="company">Bachelor of Science in Business Administration</div>
+                <div class="date">2024 - 2028</div>
+                <p>Concentration: Information Technology Management</p>
+                <p>Minor: Business of Sport and Entertainment</p>
+                <p>• Vertically Integrated Projects Program: Sports Valuation and Analytics Team</p>
+                <p>• Zell Miller Scholarship Recipient (full tuition, merit-based)</p>
+                <p>• Dean’s List & Faculty Honors recipient for 4 consecutive semesters</p>
+                <p>• Study Abroad: Georgia Tech – Europe (Summer 2025)</p>
+
+            </div>
+
+            <div class="education-item">
+                <h3>Dunwoody High School</h3>
+                <div class="date">2020 - 2024</div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Data Analysis</h3>
+                    <ul>
+                        <li>Regression Analysis</li>
+                        <li>Data Labeling</li>
+                        <li>Data Visualization</li>
+                        <li>Player Evaluation</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Leadership</h3>
+                    <ul>
+                        <li>Team Management</li>
+                        <li>Staff Training</li>
+                        <li>Operations Coordination</li>
+                        <li>Scheduling</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Technical</h3>
+                    <ul>
+                        <li>Information Technology</li>
+                        <li>Business Operations</li>
+                        <li>Project Management</li>
+                        <li>Process Optimization</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Interpersonal</h3>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Problem Solving</li>
+                        <li>Customer Service</li>
+                        <li>Teamwork</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>I'm always open to discussing new opportunities, collaborations, or just connecting with fellow professionals and students.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Location:</strong> Atlanta, Georgia
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong> rhalligan@gmail.com
+                </div>
+                <div class="contact-item">
+                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ryan-halligan" target="_blank">Connect with me on LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    <strong>University:</strong> Georgia Institute of Technology
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ryan Halligan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
