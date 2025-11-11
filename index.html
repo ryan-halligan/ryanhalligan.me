@@ -3,36 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryan Halligan</title>
+    <meta name="description" content="Ryan Halligan - Georgia Tech Business Administration Student specializing in Information Technology Management">
+    <title>Ryan Halligan | Portfolio</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #f5f5f5;
-        }
-        .container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #666;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem 2rem;
+        }
+
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .hero h1 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .experience-item:last-child, .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-title {
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .company {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 0.3rem 0;
+            color: #666;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <header>
+        <nav>
+            <div class="logo">RH</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
         <h1>Ryan Halligan</h1>
-        <p>Welcome to my website!</p>
-        <p>This is a starter template. You can customize it however you like.</p>
-    </div>
+        <p>Business Administration Student | Information Technology Management</p>
+        <p>Georgia Institute of Technology | Class of 2028</p>
+        <a href="#contact" class="cta-button">Get in Touch</a>
+    </section>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I'm a Business Administration student at the Georgia Institute of Technology's Scheller College of Business, concentrating in Information Technology Management. I'm competitive and hard-working, with a passion for sports and efficiency.</p>
+            <p>Currently, I'm gaining hands-on experience as a Player Personnel Intern at Reel Analytics and as a Student Equipment Manager for Georgia Tech Football, where I combine my love for sports with data analysis and operational excellence.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            
+            <div class="experience-item">
+                <h3><span class="job-title">Player Personnel Intern</span> at <span class="company">Reel Analytics</span></h3>
+                <div class="date">January 2025 - Present</div>
+                <p>• Provide support in player evaluation, including regression analysis, data labeling, and data visualization</p>
+                <p>• Conduct administrative tasks to support the player personnel team</p>
+            </div>
+
+            <div class="experience-item">
+                <h3><span class="job-title">Student Equipment Manager</span> at <span class="company">Georgia Tech Football</span></h3>
+                <div class="date">July 2024 - Present | Atlanta, GA</div>
+                <p>• Maintain equipment and facilities, ensuring they are ready for use</p>
+                <p>• Assist coaches and graduate assistants with drills during practice</p>
+                <p>• Run game day operations for one of the nation's premier college football programs</p>
+            </div>
+
+            <div class="experience-item">
+                <h3><span class="job-title">Pool Manager</span> at <span class="company">SwimAtlanta Pool Management</span></h3>
+                <div class="date">May 2023 - August 2024 | Atlanta, GA</div>
+                <p>• Oversee pool operations and lead personnel by training, scheduling, and managing staff</p>
+                <p>• Ensure safety protocols and customer satisfaction</p>
+            </div>
+
+            <div class="experience-item">
+                <h3><span class="job-title">Lifeguard</span> at <span class="company">SwimAtlanta Pool Management</span></h3>
+                <div class="date">May 2021 - May 2023 | Atlanta, GA</div>
+                <p>• Developed strong communication, problem-solving, and customer service skills</p>
+                <p>• CPR certified and First Aid Certified</p>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <h3>Georgia Tech Scheller College of Business</h3>
+                <div class="company">Bachelor of Science in Business Administration</div>
+                <div class="date">2024 - 2028</div>
+                <p>Concentration: Information Technology Management</p>
+            </div>
+
+            <div class="education-item">
+                <h3>Dunwoody High School</h3>
+                <div class="date">2020 - 2024</div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Data Analysis</h3>
+                    <ul>
+                        <li>Regression Analysis</li>
+                        <li>Data Labeling</li>
+                        <li>Data Visualization</li>
+                        <li>Player Evaluation</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Leadership</h3>
+                    <ul>
+                        <li>Team Management</li>
+                        <li>Staff Training</li>
+                        <li>Operations Coordination</li>
+                        <li>Scheduling</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Technical</h3>
+                    <ul>
+                        <li>Information Technology</li>
+                        <li>Business Operations</li>
+                        <li>Project Management</li>
+                        <li>Process Optimization</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Interpersonal</h3>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Problem Solving</li>
+                        <li>Customer Service</li>
+                        <li>Teamwork</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>I'm always open to discussing new opportunities, collaborations, or just connecting with fellow professionals and students.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Location:</strong> Atlanta, Georgia
+                </div>
+                <div class="contact-item">
+                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ryan-halligan" target="_blank">Connect with me on LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    <strong>University:</strong> Georgia Institute of Technology
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ryan Halligan. All rights reserved.</p>
+    </footer>
 </body>
 </html>
